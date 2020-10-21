@@ -1,7 +1,7 @@
-from Tkinter import *
 global num1EntryField
 global num2EntryField
 global answerlabel
+global frame_calc
 def plus():
     num1 = int(num1EntryField.get())
     num2 = int(num2EntryField.get())
@@ -28,53 +28,52 @@ def times():
     answerlabel.config(text=answer)
 def back ():
     frame.deiconify()
-    global frame1
-    frame1.destroy()
+    frame_calc.destroy()
 
-frame1 = Tk()
-frame1.geometry ("800x400")
+frame_calc = Tk()
+frame_calc.geometry ("800x400")
 
 
-title = Label (frame1, text="Calculator")
+title = Label (frame_calc, text="Calculator")
 title.pack()
 
 
 
 
-num1 = Label (frame1, text="Enter number")
+num1 = Label (frame_calc, text="Enter number")
 num1.pack()
 
 
-num1EntryField = Entry(frame1)
+num1EntryField = Entry(frame_calc)
 num1EntryField.pack()
 num1EntryField.configure(bg="white")
 
 
 
-num2 = Label (frame1, text="Enter number")
+num2 = Label (frame_calc, text="Enter number")
 num2.pack()
 
 
-num2EntryField = Entry(frame1)
+num2EntryField = Entry(frame_calc)
 num2EntryField.pack()
 
 
-addButton1 = Button(frame1, text="+",command=plus)
+addButton1 = Button(frame_calc, text="+",command=plus)
 addButton1.pack()
 
-addButton2 = Button(frame1, text="-",command= minus)
+addButton2 = Button(frame_calc, text="-",command= minus)
 addButton2.pack()
 
-addButton3 = Button(frame1, text="/",command= divided)
+addButton3 = Button(frame_calc, text="/",command= divided)
 addButton3.pack()
 
-addButton4 = Button(frame1, text="*",command= times)
+addButton4 = Button(frame_calc, text="*",command= times)
 addButton4.pack()
 
-addButton5 = Button(frame1, text="Go Back", command= back)
+addButton5 = Button(frame_calc, text="Go Back", command= back)
 addButton5.pack()
 
-answerlabel = Label (frame1, text="answer")
+answerlabel = Label (frame_calc, text="answer")
 answerlabel.pack()
 
-frame1.mainloop()
+frame_calc.mainloop()
