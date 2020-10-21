@@ -1,6 +1,13 @@
 """ Hackathon - Level 2 """
 
 def longest_word(string):
+    string=string.split()
+    longest = ""
+    for i in range(0,len(string)):
+        if (len(string[i]) > len(longest)):
+            longest=string[i]
+    return longest
+
     # Add your solution here. You can use additional functions if need be.
     # Don't forget to add a DocString for all your functions and comment your code.
     # Your functions should return values rather than printing the result although you can use printing for testing purposes.
