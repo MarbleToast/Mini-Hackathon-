@@ -3,7 +3,7 @@
 def encrypt(text,s): 
     result = ""
     
-    for i in range(len(text)): 
+    for i in range(0,len(text)): 
         char = text[i] 
   
         # Encrypt uppercase characters 
@@ -21,5 +21,5 @@ text = "pxisb"
 s = 3
 print ("Text  : " + text) 
 print ("Shift : " + str(s)) 
-print ("Cipher: " + encrypt(text,s)))
+print ("Cipher: " + encrypt(text,s))
     
