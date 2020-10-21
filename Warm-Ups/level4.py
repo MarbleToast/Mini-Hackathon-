@@ -1,6 +1,5 @@
 """ Hackathon - Level 4 """
 def double_swap(x, a, b):
-    old_string = x
     x = x.replace(a,'$') #I'll assume that there won't be any dollar signs in the string.
     x = x.replace(b,a)
     x = x.replace('$',b)
