@@ -133,6 +133,7 @@ def joke():
     answerLabel.pack()
 
 def ball8 ():
+    frame.withdraw()
     def answers ():
         ranNum = random.randint(1, 9)
 
@@ -178,6 +179,9 @@ def ball8 ():
                     answer = "Nope sorry"
                     answervariable = answer
                     answerLabel.config(text=answervariable)
+    def back():
+        frame.deiconify()
+        frame_ball.destroy()
 
     frame_ball = Tk()
     frame_ball.geometry ("800x400")
@@ -190,6 +194,9 @@ def ball8 ():
 
     addButton1 = Button(frame_ball, text="Here is the answer",command= answers)
     addButton1.pack()
+
+    addButton2 = Button(frame_ball, text = "Go Back", command=back)
+    addButton2.pack()
 
     answerLabel = Label (frame_ball, text="answer")
     answerLabel.pack()
