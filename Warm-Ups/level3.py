@@ -1,13 +1,21 @@
 """ Hackathon - Level 3 """
 
-def oddish_evenish(x):
-    # Add your solution here. You can use additional functions if need be.
-    # Don't forget to add a DocString for all your functions and comment your code.
-    # Your functions should return values rather than printing the result although you can use printing for testing purposes.
-    return "Your Return Value"
-
-if __name__ == '__main__':
-    # Add any code to test your solution here
-    # As per the example, this should return Oddish
-    print(oddish_evenish(1190))
+def oddish_evenish_num(n):
+    """
+    Returns Oddish if odd, else returns Evenish
     
+
+    Parameters
+    ----------
+    n : integer to evaluate
+
+    Returns
+    -------
+    Oddish: if n == odd
+    Evenish: if n == even
+
+    """
+    return 'Oddish' if sum(map(int, str(n))) % 2 else 'Evenish'
+
+if __name__ == "__main__" :
+    print(oddish_evenish_num(1190))
