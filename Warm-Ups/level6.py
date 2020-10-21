@@ -1,13 +1,25 @@
 """ Hackathon - Level 6 """
 
-def cipher(string, x):
-    # Add your solution here. You can use additional functions if need be.
-    # Don't forget to add a DocString for all your functions and comment your code.
-    # Your functions should return values rather than printing the result although you can use printing for testing purposes.
-    return "Your Return Value"
+def encrypt(text,s): 
+    result = ""
+    
+    for i in range(len(text)): 
+        char = text[i] 
+  
+        # Encrypt uppercase characters 
+        if (char.isupper()): 
+            result += chr((ord(char) + s-65) % 26 + 65) 
+  
+        # Encrypt lowercase characters 
+        else: 
+            result += chr((ord(char) + s - 97) % 26 + 97) 
+  
+    return result 
 
-if __name__ == '__main__':
-    # Add any code to test your solution here
-    # As per the example, this should return salve
-    print(cipher('pxisb', 3))
+
+text = "pxisb"
+s = 3
+print ("Text  : " + text) 
+print ("Shift : " + str(s)) 
+print ("Cipher: " + encrypt(text,s)))
     
