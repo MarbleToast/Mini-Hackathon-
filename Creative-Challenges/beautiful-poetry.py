@@ -5,6 +5,8 @@ Created on Wed Oct 21 15:09:03 2020
 @author: jrbra
 """
 import pyphen
+import random
+
 dic = pyphen.Pyphen(lang='en')
 
 
@@ -28,18 +30,35 @@ def parse_syllables():
     return syl_dict
 
 
-def subset_sum(numbers, target, partial=[]):
+def subset_sum(numbers, target, partial=[], results=[]):
     s = sum(partial)
-
-    # check if the partial sum is equals to target
     if s == target:
-        print("sum(%s)=%s" % (partial, target))
+        results.append(partial)
     if s >= target:
-        return  # if we reach the number why bother to continue
-
+        return
     for i in range(len(numbers)):
         n = numbers[i]
-        subset_sum(numbers, target, partial + [n])
+        subset_sum(numbers, target, partial + [n], results = results)
+    return results
 
-syl_dictionary = parse_syllables()
-print(subset_sum(list(syl_dictionary.keys()), 2))
+if __name__ == "__main__":
+    syl_dictionary = parse_syllables()
+    all_5_syl_sums = subset_sum(list(syl_dictionary.keys()), 5, results=[])
+    all_7_syl_sums = subset_sum(list(syl_dictionary.keys()), 7, results=[])
+    
+    first_line_sum = random.choice(all_5_syl_sums)
+    sec_line_sum = random.choice(all_7_syl_sums)
+    third_line_sum = random.choice(all_5_syl_sums)
+    
+    first_line = ""
+    second_line = ""
+    third_line = ""
+    
+    for i in first_line_sum:
+        first_line += random.choice(syl_dictionary[i]) + " "
+    for i in sec_line_sum:
+        second_line += random.choice(syl_dictionary[i]) + " "
+    for i in third_line_sum:
+        third_line += random.choice(syl_dictionary[i]) + " "
+        
+    print(first_line.capitalize() + "\n" + second_line.capitalize() + "\n" + third_line.capitalize())
