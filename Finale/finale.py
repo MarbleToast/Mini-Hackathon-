@@ -1,4 +1,7 @@
-from Tkinter import *
+try:
+    from Tkinter import *
+except:
+    from tkinter import *
 import time
 import random
 
@@ -9,8 +12,6 @@ def calc ():
 def joke():
     frame.withdraw()
     execfile('random_jokes.py')
-
-
 
 frame = Tk()
 frame.geometry("800x400")
