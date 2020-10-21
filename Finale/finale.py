@@ -131,6 +131,68 @@ def joke():
 
     answerLabel = Label (frame_jokes, text="")
     answerLabel.pack()
+
+def ball8 ():
+    def answers ():
+        ranNum = random.randint(1, 9)
+
+        if (ranNum == 1):
+                    answer = "It is certain"
+                    answervariable = answer
+                    answerLabel.config(text=answervariable)
+
+        elif(ranNum == 2) :
+                    answer = "Better not tell you now"
+                    answervariable = answer
+                    answerLabel.config(text=answervariable)
+
+        elif(ranNum == 3) :
+                    answer = "Very doubtful"
+                    answervariable = answer
+                    answerLabel.config(text=answervariable)
+        elif(ranNum == 4) :
+                    answer = "Ask again later"
+                    answervariable = answer
+                    answerLabel.config(text=answervariable)
+
+        elif(ranNum == 5) :
+                    answer = "Yes, definitely"
+                    answervariable = answer
+                    answerLabel.config(text=answervariable)
+        elif(ranNum == 6) :
+                    answer = "My sources say no"
+                    answervariable = answer
+                    answerLabel.config(text=answervariable)
+
+        elif (ranNum == 7):
+                    answer = "Yes"
+                    answervariable = answer
+                    answerLabel.config(text=answervariable)
+
+        elif(ranNum == 8) :
+                    answer = "How about i tell  you latter"
+                    answervariable = answer
+                    answerLabel.config(text=answervariable)
+
+        elif(ranNum == 9) :
+                    answer = "Nope sorry"
+                    answervariable = answer
+                    answerLabel.config(text=answervariable)
+
+    frame_ball = Tk()
+    frame_ball.geometry ("800x400")
+
+    question = Label (frame_ball, text="Ask me anything")
+    question.pack()
+
+    questionEntryField = Entry(frame_ball)
+    questionEntryField.pack()
+
+    addButton1 = Button(frame_ball, text="Here is the answer",command= answers)
+    addButton1.pack()
+
+    answerLabel = Label (frame_ball, text="answer")
+    answerLabel.pack()
 #Finale frame
 
 frame = Tk()
@@ -146,5 +208,9 @@ addButton1.place(relx=0.3, rely=0.1, anchor=CENTER)
 addButton2 = Button(frame,text= "Random joke generator",command=joke)
 addButton2.pack()
 addButton2.place(relx=0.5, rely=0.1, anchor=CENTER)
+
+addButton3 = Button(frame, text= "8 ball", command = ball8)
+addButton3.pack()
+addButton3.place(relx=0.7, rely = 0.1, anchor=CENTER)
 
 frame.mainloop()
