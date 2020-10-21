@@ -1,4 +1,4 @@
-import tkinter
+from Tkinter import *
 
 
 def plus():
@@ -30,58 +30,50 @@ def times():
     answervariable = answer
     answerlabel.config(text=answervariable)
 
-frame = tkinter.Tk()
+frame = Tk()
 frame.geometry ("800x400")
 
 
-title = tkinter.Label (frame, text="Calculator")
+title = Label (frame, text="Calculator")
 title.pack()
 
 
 
 
-num1 = tkinter.Label (frame, text="Enter number")
+num1 = Label (frame, text="Enter number")
 num1.pack()
 
 
-num1EntryField = tkinter.Entry(frame)
+num1EntryField = Entry(frame)
 num1EntryField.pack()
 num1EntryField.configure(bg="white")
 
 
 
-num2 = tkinter.Label (frame, text="Enter number")
+num2 = Label (frame, text="Enter number")
 num2.pack()
 
 
-num2EntryField = tkinter.Entry(frame)
+num2EntryField = Entry(frame)
 num2EntryField.pack()
-num2EntryField.configure(bg="white")
 
 
-addButton1 = tkinter.Button(frame, text="+",command=plus)
+addButton1 = Button(frame, text="+",command=plus)
 addButton1.pack()
-addButton1.configure(bg="red")
 
 
-addButton2 = tkinter.Button(frame, text="-",command= minus)
+addButton2 = Button(frame, text="-",command= minus)
 addButton2.pack()
-addButton2.configure(bg="red")
 
 
-addButton3 = tkinter.Button(frame, text="/",command= divided)
+addButton3 = Button(frame, text="/",command= divided)
 addButton3.pack()
-addButton3.configure(bg="red")
 
 
-addButton4 = tkinter.Button(frame, text="*",command= times)
+addButton4 = Button(frame, text="*",command= times)
 addButton4.pack()
-addButton4.configure(bg="red")
 
-answerlabel = tkinter.Label (frame, text="answer")
+answerlabel = Label (frame, text="answer")
 answerlabel.pack()
-
-
-
 
 frame.mainloop()

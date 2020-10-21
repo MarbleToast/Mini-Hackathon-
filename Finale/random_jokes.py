@@ -1,4 +1,4 @@
-import tkinter
+from Tkinter import *
 import random
 
 def answers ():
@@ -51,21 +51,20 @@ def answers ():
 
 
 
-window = tkinter.Tk()
-window.geometry ("600x400")
+frame = Tk()
+frame.geometry ("600x400")
 
 
-question = tkinter.Label (window, text="wana hear a joke?")
+question = Label (frame, text="wana hear a joke?")
 question.pack()
 
 
 
-addButton1 = tkinter.Button(window, text="Here it is",command= answers)
+addButton1 = Button(frame, text="Here it is",command= answers)
 addButton1.pack()
-addButton1.configure(bg="red")
 
-answerLabel = tkinter.Label (window, text="jokes")
+answerLabel = Label (frame, text="")
 answerLabel.pack()
 
 
-window.mainloop()
+frame.mainloop()
