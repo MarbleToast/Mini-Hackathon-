@@ -62,3 +62,4 @@ if __name__ == "__main__":
         third_line += random.choice(syl_dictionary[i]) + " "
         
     print(first_line.capitalize() + "\n" + second_line.capitalize() + "\n" + third_line.capitalize())
+    input()
